@@ -10,7 +10,7 @@ const nav=[
 
 const booksRouter = require('./src/routes/bookRoutes')(nav);
 const authorRouter = require('./src/routes/authorRoutes')(nav);
-const bookRouter1 = require('./src/routes/bookRouter1')(nav)
+const bookRouter1 = require('./src/routes/bookRoutes1')(nav)
 
 
 
