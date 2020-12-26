@@ -1,5 +1,7 @@
 const express=require('express');
 const booksRouter=express.Router();
+const Bookdata=require('../model/Bookdata');
+
 function router(nav){
     var books=[{
         title:'English',
@@ -28,16 +30,18 @@ function router(nav){
         img:'book4.jfif'
     }]
 booksRouter.get('/',(req,res)=>{
-    res.render("books",{nav,title:"books",books})
+        res.render("books",{nav,title:"books",books})
+    })
+    
 
 booksRouter.get('/:id',(req,res)=>{
     const id = req.params.id
-    // const book=books[i]
     res.render("book",{nav,title:"book",book:books[id]})
 })
 
 
 
-})
-return booksRouter}
+
+return booksRouter;
+}
 module.exports=router
