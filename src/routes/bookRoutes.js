@@ -30,6 +30,14 @@ function router(nav){
 booksRouter.get('/',(req,res)=>{
     res.render("books",{nav,title:"books",books})
 
+booksRouter.get('/:id',(req,res)=>{
+    const id = req.params.id
+    // const book=books[i]
+    res.render("book",{nav,title:"book",book:books[id]})
+})
+
+
+
 })
 return booksRouter}
 module.exports=router
