@@ -5,11 +5,13 @@ const app=express();
 const nav=[
     {link:'/',name:'home'},
     {link:'/books',name:'books'},
-    {link:'/authors',name:'authors'}
+    {link:'/authors',name:'authors'},
+    {link:'/admin',name:'AddBook'}
 ]
 
 const booksRouter = require('./src/routes/bookRoutes')(nav);
 const authorRouter = require('./src/routes/authorRoutes')(nav);
+const adminRouter = require('./src/routes/adminRoutes')(nav);
 
 
 
@@ -21,6 +23,8 @@ app.set('views',__dirname+'/src/views')
 app.use('/books',booksRouter);
 
 app.use('/authors',authorRouter);
+
+app.use('/admin',adminRouter);
 
 app.get('/',(req,res)=>{
     res.render("index",{
