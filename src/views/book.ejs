@@ -125,15 +125,30 @@
             <h4><img src="/images/<%=book.img%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=book.title%></h4>
             <h5><%=book.author%></h5>
             <h5><%=book.type%></h5>
-            <form>
+
+            <form action="/admin/edit/<%=book._id%>" method="GET">
+            
+                <center>
+    
+                <input type="submit" value="EDIT">
+    
+                </center>
+    
+            </form>
+
+            <br>
+            
+            <form action="/admin/delete/<%=book._id%>" method="POST">
+            
                 <center>
 
-                <input type="button" value="EDIT">
+                <input type="submit" value="DELETE">
 
-                <input type="button" value="DELETE">
-
+            
                 </center>
+            
             </form>
+            
             <hr>
             
             <hr>
