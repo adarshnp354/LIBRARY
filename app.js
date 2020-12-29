@@ -7,7 +7,7 @@ const nav=[
     {link:'/',name:'home'},
     {link:'/books',name:'books'},
     {link:'/authors',name:'authors'},
-    {link:'/admin',name:'AddBook'}
+    {link:'/admin',name:'Add Book'}
 ]
 
 const booksRouter = require('./src/routes/bookRoutes')(nav);
