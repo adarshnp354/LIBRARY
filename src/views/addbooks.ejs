@@ -124,21 +124,26 @@
             <form action="/admin/add" method="POST"> 
 
             <div>
-                <input type="text">
+                <input type="text" name="title">
                 <label>Book Name</label>
            </div>
 
            <div>
-                <input type="text">
+                <input type="text" name="author">
                 <label>Author Name</label>
            </div>
 
            <div>
-               <input type="file">
+                <input type="text" name="type">
+                <label>Type</label>
+           </div>
+
+           <div>
+               <input type="file" name="img">
 
            </div>
 
-           <input type="button" value="Add Book">
+           <input type="submit" value="Add Book">
 
             </form>
 
