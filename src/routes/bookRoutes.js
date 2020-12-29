@@ -39,7 +39,11 @@ booksRouter.get('/',(req,res)=>{
 
 booksRouter.get('/:id',(req,res)=>{
     const id = req.params.id
-    res.render("book",{nav,title:"book",book:books[id]})
+    Bookdata.findOne({_id:id})
+    .then((book)=>{
+        res.render("book",{nav,title:"book",book})
+    })
+    
 })
 
 
