@@ -25,6 +25,28 @@ function router(nav){
                 res.redirect('/books')          
     })
 
+    
+    adminRouter.post('/delete/:id',(req,res)=>{
+        const id = req.params.id
+        Bookdata.findByIdAndDelete(id,(err,docs)=>{
+            if(err){
+                console.log(err)
+            }else{
+                console.log("deleted",docs)
+            }
+        })
+        res.redirect('/books')
+    })
+
+    adminRouter.get('/edit/:id',(req,res)=>{
+        const id = req.params.id
+        Bookdata.findById({_id:id})
+            .then((book)=>{
+                res.render("edit",{nav,title:"edit",edit})
+            })
+
+            
+    })
 
 
 
