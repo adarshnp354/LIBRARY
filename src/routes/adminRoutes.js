@@ -6,7 +6,7 @@ const Bookdata=require('../model/Bookdata');
 function router(nav){
 
     adminRouter.get('/',(req,res)=>{
-        res.render("addbook",
+        res.render("addbooks",
         {
             nav,
             title:'Add Book'
@@ -20,7 +20,7 @@ function router(nav){
                     type:req.body.type,
                     img:req.body.img
                 }
-                var book = Bookdata(item);
+                var book = Bookdata(items);
                 book.save();
                 res.redirect('/books')          
     })
