@@ -7,12 +7,14 @@ const nav=[
     {link:'/',name:'home'},
     {link:'/books',name:'books'},
     {link:'/authors',name:'authors'},
-    {link:'/admin',name:'Add Book'}
+    {link:'/admin',name:'Add Book'},
+    {link:'/addauthor',name:'Add Author'}
 ]
 
 const booksRouter = require('./src/routes/bookRoutes')(nav);
 const authorRouter = require('./src/routes/authorRoutes')(nav);
 const adminRouter = require('./src/routes/adminRoutes')(nav);
+const addauthorRouter = require('./src/routes/addauthorRoutes')(nav);
 
 
 
@@ -26,6 +28,8 @@ app.use('/books',booksRouter);
 app.use('/authors',authorRouter);
 
 app.use('/admin',adminRouter);
+
+app.use('/addauthor',addauthorRouter);
 
 app.get('/',(req,res)=>{
     res.render("index",{

@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <title><%=title%></title>
+    <title>EDIT</title>
     <style>
 
        li{
@@ -107,7 +107,7 @@
 
         <div class="lside">
 
-            <h1><i class='fas fa-book-open' style='font-size:48px'>&nbsp;<%=title%></i></h1>
+            <h1><i class='fas fa-book-open' style='font-size:48px'>&nbsp;Edit</i></h1>
         
         </div>
         
@@ -121,20 +121,20 @@
     
         <div class="b">
 
-            <form action="/admin/add" method="POST"> 
+            <form action="/admin/update/<%=book._id%>" method="POST"> 
 
             <div>
-                <input type="text" name="title" value="<%=books[i].title%>">
+                <input type="text" name="title" value="<%=book.title%>">
                 <label>Book Name</label>
            </div>
 
            <div>
-                <input type="text" name="author" value="<%=books[i].author%>">
+                <input type="text" name="author" value="<%=book.author%>">
                 <label>Author Name</label>
            </div>
 
            <div>
-                <input type="text" name="type" value="<%=books[i].type%>">
+                <input type="text" name="type" value="<%=book.type%>">
                 <label>Type</label>
            </div>
 

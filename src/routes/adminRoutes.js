@@ -7,7 +7,7 @@ function router(nav){
 
     adminRouter.get('/',(req,res)=>{
         res.render("addbooks",
-        {
+        { 
             nav,
             title:'Add Book'
         })
@@ -40,15 +40,32 @@ function router(nav){
 
     adminRouter.get('/edit/:id',(req,res)=>{
         const id = req.params.id
-        Bookdata.findById({_id:id})
+        Bookdata.findOne({_id:id})
             .then((book)=>{
-                res.render("edit",{nav,title:"edit",edit})
+                res.render("edit",{nav,book})
             })
-
+    
             
     })
 
-
+    adminRouter.post('/update/:id',(req,res)=>{
+        const id = req.params.id
+        var items = {
+                    title:req.body.title,
+                    author:req.body.author,
+                    type:req.body.type,
+                    img:req.body.img
+                }
+               Bookdata.findByIdAndUpdate(id,items,(err,doc)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        console.log("updated",doc)
+                    }
+               })
+                res.redirect('/books')          
+    })
+  
 
 return adminRouter}
 module.exports=router

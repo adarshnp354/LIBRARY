@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,39 +121,32 @@
     
         <div class="b">
 
-            <hr>
-            
-            <h4><img src="/images/<%=book.img%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=book.title%></h4>
-            <h5><%=book.author%></h5>
-            <h5><%=book.type%></h5>
+            <form action="/addauthor/add" method="POST"> 
 
-            <form action="/admin/edit/<%=book._id%>" method="GET">
-            
-                <center>
-    
-                    <input type="submit" value="EDIT">
-    
-                </center>
-    
+            <div>
+                <input type="text" name="name">
+                <label>Author Name</label>
+           </div>
+
+           <div>
+                <input type="text" name="age">
+                <label>Author Age</label>
+           </div>
+
+           <div>
+                <input type="text" name="place">
+                <label>Author Place</label>
+           </div>
+
+           <div>
+               <input type="file" name="img">
+
+           </div>
+
+           <input type="submit" value="Add Author">
+
             </form>
 
-            <br>
-            
-            <form action="/admin/delete/<%=book._id%>" method="POST">
-            
-                <center>
-
-                <input type="submit" value="DELETE">
-
-            
-                </center>
-            
-            </form>
-            
-            <hr>
-            
-            <hr>
-            
         </div>
        
     </div>
@@ -168,3 +162,4 @@
 </body>
 
 </html>
+

@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <title><%=title%></title>
+    <title>EDIT</title>
     <style>
 
        li{
@@ -106,7 +108,7 @@
 
         <div class="lside">
 
-            <h1><i class='fas fa-book-open' style='font-size:48px'>&nbsp;<%=title%></i></h1>
+            <h1><i class='fas fa-book-open' style='font-size:48px'>&nbsp;Edit</i></h1>
         
         </div>
         
@@ -120,39 +122,32 @@
     
         <div class="b">
 
-            <hr>
-            
-            <h4><img src="/images/<%=book.img%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=book.title%></h4>
-            <h5><%=book.author%></h5>
-            <h5><%=book.type%></h5>
+            <form action="/addauthor/update/<%=author._id%>" method="POST"> 
 
-            <form action="/admin/edit/<%=book._id%>" method="GET">
-            
-                <center>
-    
-                    <input type="submit" value="EDIT">
-    
-                </center>
-    
+            <div>
+                <input type="text" name="title" value="<%=author.name%>">
+                <label>Author Name</label>
+           </div>
+
+           <div>
+                <input type="text" name="author" value="<%=author.age%>">
+                <label>Author Age</label>
+           </div>
+
+           <div>
+                <input type="text" name="type" value="<%=author.place%>">
+                <label>Place</label>
+           </div>
+
+           <div>
+               <input type="file" name="img">
+
+           </div>
+
+           <input type="submit" value="Update">
+
             </form>
 
-            <br>
-            
-            <form action="/admin/delete/<%=book._id%>" method="POST">
-            
-                <center>
-
-                <input type="submit" value="DELETE">
-
-            
-                </center>
-            
-            </form>
-            
-            <hr>
-            
-            <hr>
-            
         </div>
        
     </div>

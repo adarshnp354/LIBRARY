@@ -120,15 +120,36 @@
         <div class="b">
 
             <hr>
-            <%for(i=0;i<authors.length;i++){%>
-            <h4><img src="/images/<%=authors[i].img%>">&nbsp;&nbsp;&nbsp;<%=authors[i].name%></h4>
-            <h5><%=authors[i].age%></h5>
-            <h5><%=authors[i].place%></h5>
-            <h5><a href="/authors/<%=authors[i]._id%>">Read More</a></h5>
-            <hr>
-            <%}%>
+            
+            <h4><img src="/images/<%=author.img%>">&nbsp;&nbsp;&nbsp;<%=author.name%></h4>
+            <h5><%=author.age%></h5>
+            <h5><%=author.place%></h5>
 
-            <button class="btn">More&nbsp;<i class="fa fa-hand-o-down"></i></button>
+            <form action="/addauthor/edit/<%=author._id%>" method="GET">
+            
+                <center>
+    
+                    <input type="submit" value="EDIT">
+    
+                </center>
+    
+            </form>
+
+            <br>
+            
+            <form action="/addauthor/delete/<%=author._id%>" method="POST">
+            
+                <center>
+
+                <input type="submit" value="DELETE">
+
+            
+                </center>
+            
+            </form>
+           
+            <hr>
+            
             <hr>
             
         </div>

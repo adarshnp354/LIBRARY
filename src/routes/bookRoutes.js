@@ -1,3 +1,4 @@
+
 const express=require('express');
 const booksRouter=express.Router();
 const Bookdata=require('../model/Bookdata');
@@ -29,7 +30,7 @@ function router(nav){
     //     type:'Novel',
     //     img:'book4.jfif'
     // }]
-booksRouter.get('/',(req,res)=>{
+    booksRouter.get('/',(req,res)=>{
     Bookdata.find()
     .then((books)=>{
         res.render("books",{nav,title:"books",books})
@@ -45,6 +46,8 @@ booksRouter.get('/:id',(req,res)=>{
     })
     
 })
+
+
 
 
 
