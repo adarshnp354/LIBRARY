@@ -37,15 +37,15 @@ function router(nav){
         res.render("authors",{nav,title:"authors",authors})
     })
    
-})
+    })
 
-authorsRouter.get('/:id',(req,res)=>{
+    authorsRouter.get('/:id',(req,res)=>{
     const id = req.params.id;
     Authordata.findOne({_id:id})
     .then((author)=>{
         res.render('author',{nav,title:"author",author})
     })
-})
+    })
 
 
 
