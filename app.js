@@ -33,7 +33,6 @@ app.use('/addauthor',addauthorRouter);
 
 app.get('/',(req,res)=>{
     res.render("index",{
-
         nav,
         title:'library'
     })
